@@ -1,0 +1,42 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .input {
+    background-color: #f3f4f6;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 3px 12px;
+    line-height: 2;
+    width: 100%;
+    font-family:
+      "Open Sans",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 14px;
+  }
+  
+  .label {
+    color: #424955;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .placeholder {
+    color: #bcc1ca;
+    font-weight: 400;
+  }
+  
+  .icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  

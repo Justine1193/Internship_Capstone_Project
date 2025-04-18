@@ -1,0 +1,189 @@
+.container {
+    background-color: #fff;
+    border-radius: 16px;
+    flex-direction: row;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 3px 6px #120f281f;
+  }
+  
+  .formSection {
+    background-color: #fff;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 0 96px;
+    display: flex;
+  }
+  
+  .illustrationSection {
+    background-color: #1a5458;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .form {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .title {
+    color: #171a1f;
+    margin-bottom: 40px;
+    font-family: Poppins, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .inputGroup {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .inputLabel {
+    color: #424955;
+    margin-bottom: 4px;
+    font-family:
+      Open Sans,
+      sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+  }
+  
+  .input {
+    color: #bcc1ca;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    font-family:
+      Open Sans,
+      sans-serif;
+    font-size: 14px;
+  }
+  
+  .passwordContainer {
+    position: relative;
+    width: 100%;
+  }
+  
+  .passwordToggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .formActions {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+  }
+  
+  .rememberMe {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hiddenCheckbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkboxIcon {
+    background-color: #1a5458;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    display: flex;
+  }
+  
+  .forgotPassword {
+    color: #1a5458;
+    font-family:
+      Open Sans,
+      sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .submitButton {
+    color: #fff;
+    cursor: pointer;
+    background-color: #1a5458;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    font-family:
+      Open Sans,
+      sans-serif;
+    font-size: 16px;
+    box-shadow:
+      0 0 2px #1a54581f,
+      0 8px 17px #1a545826;
+  }
+  
+  .illustration {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .container {
+      flex-direction: column;
+      max-width: 991px;
+    }
+  
+    .formSection {
+      padding: 0 48px;
+    }
+  
+    .illustrationSection {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  
+    .title {
+      font-size: 24px;
+    }
+  
+    .input {
+      padding: 10px;
+    }
+  
+    .submitButton {
+      padding: 10px;
+    }
+  }
+  
