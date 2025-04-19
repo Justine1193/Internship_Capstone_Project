@@ -1,5 +1,5 @@
 import React from 'react';
-import './Stepsection.css';
+import "./styles/Stepsection.css";
 import { FaSearch, FaBriefcase, FaUsers } from 'react-icons/fa'; // icons from react-icons
 
 function StepsSection() {

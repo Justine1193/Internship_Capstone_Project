@@ -1,0 +1,71 @@
+@media (max-width: 768px) { 
+}
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  height: 75px; /* lakihan mo dito kung gusto mo */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* Navbar actions */
+.navbar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.navbar-btn {
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Sign Up button */
+.signup-btn {
+  color: #4f70cb;
+  border: 2px solid #4f70cb;
+  background: transparent;
+}
+
+.signup-btn:hover {
+  background-color: #2e427b;
+  color: white;
+}
+
+/* Log In button */
+.login-btn {
+  background-color: #4f70cb;
+  color: white;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #2e427b;
+}
