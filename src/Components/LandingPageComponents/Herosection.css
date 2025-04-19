@@ -1,0 +1,46 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../../assets/neu_bg.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Overlay Layer */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* black color with 40% opacity */
+  z-index: 1;
+}
+
+/* Hero Text */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700; /* <-- Make text bold */
+  color: white;
+}
+
+.hero-button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #4f70cb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
