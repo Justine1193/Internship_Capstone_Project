@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./SignUpForm.module.css";
 
-function PasswordInput({ placeholder, name }) {
+function PasswordInput({ placeholder, name, value, onChange }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -15,6 +15,8 @@ function PasswordInput({ placeholder, name }) {
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         name={name}
+        value={value}            
+        onChange={onChange} 
         className={styles.input}
         aria-label="Password"
       />
