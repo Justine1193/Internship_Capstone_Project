@@ -5,7 +5,7 @@ import logo_light from "../../assets/logo-black.png"
 
 const Navbar = () => {
   return (
-    <nav className="btn-navbar">
+    <nav className="navbar">
 
       <a href="/" className="logo-container">
         <img src={logo_light} alt="InternQuest" className="logo" />
@@ -18,9 +18,9 @@ const Navbar = () => {
         <Button variant="primary" className="navbar-btn login-btn">
           Log In
         </Button>
-
       </div>
     </nav>
+
   )
 }
 
