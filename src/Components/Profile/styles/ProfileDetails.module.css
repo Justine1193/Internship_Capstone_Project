@@ -1,0 +1,114 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    font-family: system-ui, sans-serif;
+  }
+  
+  @media (width <= 640px) {
+    .container {
+      padding: 20px;
+    }
+  }
+  
+  .pageTitle {
+    color: #1a3353;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .infoSection {
+    background-color: #fff;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 32px;
+    box-shadow: 0 2px 8px #00000014;
+  }
+  
+  .sectionTitle {
+    color: #1a3353;
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .profileContainer {
+    gap: 24px;
+    margin-bottom: 24px;
+    display: flex;
+  }
+  
+  @media (width <= 640px) {
+    .profileContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .profilePhoto {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 60px;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+  }
+  
+  .formContainer {
+    flex: 1;
+  }
+  
+  .formGroup {
+    margin-bottom: 16px;
+  }
+  
+  .formLabel {
+    color: #666;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .formInput {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  
+  .formSelect {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  
+  .preferencesContainer {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px #00000014;
+  }
+  
+  .preferencesSection {
+    margin-bottom: 24px;
+  }
+  
+  .saveButton {
+    color: #fff;
+    cursor: pointer;
+    background-color: #1a3353;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+  
+  .saveButton:hover {
+    background: #2a4365;
+  }
+  
