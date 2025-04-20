@@ -1,0 +1,488 @@
+.dashboard {
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 3px 6px #120f281f;
+  }
+  
+  .container77 {
+    background-color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    padding: 2px 24px 2px 10px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 2px #171a1f1f;
+  }
+  
+  @media (width<=991px) {
+    .container77 {
+      max-width: 100%;
+      padding-right: 20px;
+    }
+  }
+  
+  .headerGroup {
+    white-space: nowrap;
+    align-items: stretch;
+    gap: 21px;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .headerGroup {
+      white-space: initial;
+    }
+  }
+  
+  .logoGroup {
+    color: #000;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .logoGroup {
+      white-space: initial;
+    }
+  }
+  
+  .img {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+    width: 36px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .internQuest {
+    flex-basis: auto;
+  }
+  
+  .headerMenu6 {
+    background-color: transparent;
+    align-items: stretch;
+    font-family: Open Sans, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .headerMenu6 {
+      white-space: initial;
+    }
+  }
+  
+  .frame {
+    color: #565e6c;
+    background-color: transparent;
+    padding: 15px 12px;
+    font-weight: 400;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  @media (width<=991px) {
+    .frame {
+      white-space: initial;
+    }
+  }
+  
+  .frame2 {
+    color: #1a5458;
+    background-color: transparent;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  @media (width<=991px) {
+    .frame2 {
+      white-space: initial;
+    }
+  }
+  
+  .internship {
+    align-self: center;
+  }
+  
+  .rectangle {
+    background-color: #1a5458;
+    flex-shrink: 0;
+    height: 4px;
+    margin-top: 11px;
+    display: flex;
+  }
+  
+  .userNav {
+    color: #171a1f;
+    align-items: stretch;
+    gap: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: Open Sans, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    display: flex;
+  }
+  
+  .img2 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+    width: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .userProfile {
+    align-items: center;
+    gap: 6px;
+    display: flex;
+  }
+  
+  .img3 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 18px;
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 36px;
+  }
+  
+  .amandaSmith {
+    align-self: stretch;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .img4 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  /* Continuing from previous CSS... */
+
+.column3 {
+    flex-direction: column;
+    align-items: stretch;
+    width: 26%;
+    margin-left: 0;
+    line-height: normal;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .column3 {
+      width: 100%;
+    }
+  }
+  
+  .container79 {
+    color: #171a1f;
+    background-color: #fff;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    font-family:
+      Open Sans,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 2px #171a1f1f;
+  }
+  
+  @media (width<=991px) {
+    .container79 {
+      margin-top: 31px;
+    }
+  }
+  
+  .filterHeader {
+    white-space: nowrap;
+    align-self: start;
+    align-items: stretch;
+    gap: 6px;
+    margin-left: 16px;
+    font-family:
+      Poppins,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .filterHeader {
+      white-space: initial;
+      margin-left: 10px;
+    }
+  }
+  
+  .img15 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+    width: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .filters {
+    margin: 0;
+  }
+  
+  .img16 {
+    aspect-ratio: 166.67;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    margin-top: 16px;
+    border: none;
+  }
+  
+  .filterSection {
+    align-items: stretch;
+    gap: 8px;
+    margin: 19px 16px;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .filterSection {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  
+  .filterGroup {
+    white-space: nowrap;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+    display: flex;
+  }
+  
+  @media (width<=991px) {
+    .filterGroup {
+      white-space: initial;
+    }
+  }
+  
+  .field {
+    align-self: start;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2;
+    margin: 0;
+  }
+  
+  .checkbox6 {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+  }
+  
+  @media (width<=991px) {
+    .checkbox6 {
+      white-space: initial;
+    }
+  }
+  
+  .frame8 {
+    background-color: transparent;
+    align-items: stretch;
+    gap: 6px;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  @media (width<=991px) {
+    .frame8 {
+      white-space: initial;
+    }
+  }
+  
+  .rectangle2 {
+    background-color: #fff;
+    border: 1px solid #9095a0;
+    border-radius: 2px;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .nursing {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 123px;
+  }
+  
+  .frame9 {
+    background-color: transparent;
+    align-items: stretch;
+    gap: 6px;
+    margin-top: 8px;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  @media (width<=991px) {
+    .frame9 {
+      white-space: initial;
+    }
+  }
+  
+  .img17 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+    width: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .engineering {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 123px;
+  }
+  
+  .filterGroup2 {
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    display: flex;
+  }
+  
+  .img18 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    align-self: end;
+    width: 24px;
+  }
+  
+  .checkbox8 {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 17px;
+  }
+  
+  .frame10 {
+    background-color: transparent;
+    align-items: stretch;
+    gap: 6px;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .rectangle3 {
+    background-color: #fff;
+    border: 1px solid #9095a0;
+    border-radius: 2px;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .computerScience {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 123px;
+  }
+  
+  .frame11 {
+    white-space: nowrap;
+    background-color: transparent;
+    align-items: stretch;
+    gap: 6px;
+    margin-top: 8px;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  @media (width<=991px) {
+    .frame11 {
+      white-space: initial;
+    }
+  }
+  
+  .img19 {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+    width: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .multiMedia {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 123px;
+  }
+  
+  .img20 {
+    aspect-ratio: 166.67;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+  }
+  
+  /* Continue with remaining styles... */
