@@ -1,0 +1,191 @@
+.container {
+  background: #fff;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  position: relative;
+}
+
+.formContainer {
+  z-index: 1;
+  background-color: #ffffffe6;
+  border-radius: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 585px;
+  padding: 0 96px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 8px 32px #0000001a;
+}
+
+.title {
+  color: #1a5458;
+  margin-bottom: 40px;
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.inputGroup {
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  display: flex;
+}
+
+.label {
+  color: #1a5458;
+  font-family:
+    Open Sans,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input {
+  color: #1a5458;
+  background-color: #1a54580d;
+  border: 1px solid #1a545833;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  padding: 12px;
+  font-family:
+    Open Sans,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.2s;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  margin-top: 4px;
+  font-family:
+    Open Sans,
+    sans-serif;
+  font-size: 12px;
+}
+
+.passwordWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.termsLabel {
+  cursor: pointer;
+  user-select: none;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+}
+
+.checkbox {
+  cursor: pointer;
+  border: 1px solid #1a5458;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  transition: all 0.2s;
+  display: flex;
+}
+
+.termsText {
+  color: #171a1f;
+  font-family:
+    Open Sans,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.submitButton {
+  color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px;
+  font-family:
+    Open Sans,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+  box-shadow:
+    0 0 2px #1a54581f,
+    0 8px 17px #1a545826;
+}
+
+.decorativeSidebar {
+  background-color: #ffffff1a;
+  border-radius: 0 16px 16px 0;
+  width: 445px;
+  height: 100vh;
+}
+
+@media (width <= 991px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 991px;
+  }
+
+  .formContainer {
+    padding: 0 20px;
+  }
+
+  .decorativeSidebar {
+    display: none;
+  }
+}
+
+@media (width <= 640px) {
+  .container {
+    max-width: 640px;
+  }
+
+  .formContainer {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+
+  .termsText {
+    font-size: 12px;
+  }
+
+  .submitButton {
+    font-size: 14px;
+  }
+}
