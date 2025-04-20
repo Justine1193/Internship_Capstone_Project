@@ -1,30 +1,21 @@
-"use client";
 import React from "react";
-import styles from "./FormInput.module.css";
+import styles from "./SignUpForm.module.css";
 
-const FormInput = ({ label, type, value, onChange, onBlur, error, id }) => {
+function FormInput({ type, placeholder, name, value, onChange }) {
   return (
-    <div className={styles.inputGroup}>
-      <label className={styles.label} htmlFor={id}>
-        {label}
-      </label>
+    <div className={styles.inputWrapper}>
       <input
-        id={id}
-        className={styles.input}
         type={type}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-        aria-invalid={!!error}
-        aria-describedby={error ? `${id}-error` : undefined}
+        placeholder={placeholder}
+        name={name}
+        value={value}           // <-- ADD this
+        onChange={onChange}     // <-- ADD this
+        className={styles.input}
+        aria-label={placeholder}
+        required
       />
-      {error && (
-        <p className={styles.errorMessage} id={`${id}-error`} role="alert">
-          {error}
-        </p>
-      )}
     </div>
   );
-};
+}
 
 export default FormInput;
