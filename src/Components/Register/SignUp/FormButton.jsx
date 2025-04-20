@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./SignUpForm.module.css";
+import styles from "./FormButton.module.css";
 
-function FormButton({ children, type = "button" }) {
+const FormButton = ({ children, type = "button", onClick }) => {
   return (
-    <button type={type} className={styles.submitButton}>
+    <button type={type} className={styles.button} onClick={onClick}>
       {children}
     </button>
   );
-}
+};
 
 export default FormButton;
