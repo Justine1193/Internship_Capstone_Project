@@ -7,7 +7,7 @@ import './index.css';
 
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import SignInPage from './Components/Register/SignIn/SignInPage.jsx';
-import SignUpForm from './Components/Register/SignUp/SignUpForm.jsx';
+import SignUpForm from './Components/Register/SignUp/CreateAccount.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/signin" element={<SignInPage />} />
-        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/signup" element={<CreateAccount />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
