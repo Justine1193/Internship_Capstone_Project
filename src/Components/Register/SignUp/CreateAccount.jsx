@@ -2,10 +2,6 @@
 import React, { useState } from "react";
 import styles from "./CreateAccount.module.css";
 
-import FormInput from "./FormInput";
-import PasswordInput from "./PasswordInput";
-import FormButton from "./FormButton";
-
 import { db } from "../../../firebase";
 import { ref, push, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
