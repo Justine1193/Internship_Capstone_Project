@@ -1,109 +1,176 @@
-"use client";
-import React, { useState } from "react";
 import styles from "./CreateAccount.module.css";
-
-import { db } from "../../../firebase";
-import { ref, push, set } from "firebase/database";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebase"; // Make sure this path is correct
 
 function CreateAccount() {
-  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!email || !password || !fullName) {
-      alert("Please fill in all fields.");
-      return;
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!value) {
+      setEmailError("Email is required");
+      return false;
     }
+    if (!emailRegex.test(value)) {
+      setEmailError("Please enter a valid email");
+      return false;
+    }
+    setEmailError("");
+    return true;
+  };
 
+  const validatePassword = () => {
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      return;
+      setEmailError("Passwords do not match");
+      return false;
     }
+    return true;
+  };
 
-    if (!acceptTerms) {
-      alert("You must accept the terms and conditions.");
+  const toggleAcceptTerms = () => {
+    setAcceptTerms(!acceptTerms);
+  };
+
+  const handleSubmit = async () => {
+    if (!validateEmail(email) || !validatePassword() || !acceptTerms) {
       return;
     }
 
     setIsSubmitting(true);
-
     try {
-      const userRef = ref(db, "users/");
-      const newUserRef = push(userRef);
-
-      await set(newUserRef, {
-        fullName,
-        email,
-        password,
-      });
-
-      alert("Account created successfully!");
-      navigate("/signin");
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User created:", userCredential.user);
+      // You can redirect or show a message here
     } catch (error) {
-      alert("Error creating account: " + error.message);
+      console.error("Error creating account:", error.message);
+      setEmailError(error.message);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <main className={styles.pageContainer}>
-      <section className={styles.formContainer}>
-        <h1 className={styles.formTitle}>Create Account</h1>
-        <form onSubmit={handleSubmit}>
-          <FormInput
-            type="text"
-            placeholder="Full name"
-            name="fullName"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-          />
-          <FormInput
+    <div className={styles.container}>
+      <div className={styles.formContainer}>
+        <h1 className={styles.title}>Create Account</h1>
+
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>Email</label>
+          <input
+            className={styles.input}
             type="email"
-            placeholder="example.email@gmail.com"
-            name="email"
+            placeholder="Enter your email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              validateEmail(e.target.value);
+            }}
           />
-          <PasswordInput
-            placeholder="Enter at least 8+ characters"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <PasswordInput
-            placeholder="Confirm password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          {emailError && <div className={styles.errorMessage}>{emailError}</div>}
+        </div>
 
-          <label className={styles.termsLabel}>
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>Password</label>
+          <div className={styles.passwordWrapper}>
             <input
-              type="checkbox"
-              checked={acceptTerms}
-              onChange={() => setAcceptTerms(!acceptTerms)}
+              className={styles.input}
+              placeholder="Enter your password"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <span className={styles.termsText}>
-              I agree to the Terms of Service and Privacy Policy
-            </span>
-          </label>
+            <div
+              className={styles.passwordToggle}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {/* Eye icon here */}
+              {/* ... (keep your eye SVG) */}
+            </div>
+          </div>
+        </div>
 
-          <FormButton type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Creating account..." : "Create Account"}
-          </FormButton>
-        </form>
-      </section>
-    </main>
+        <div className={styles.inputGroup}>
+          <label className={styles.label}>Confirm Password</label>
+          <div className={styles.passwordWrapper}>
+            <input
+              className={styles.input}
+              placeholder="Confirm your password"
+              type={showConfirmPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <div
+              className={styles.passwordToggle}
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {/* Eye icon here */}
+              {/* ... (keep your eye SVG) */}
+            </div>
+          </div>
+        </div>
+
+        <label className={styles.termsLabel}>
+          <div
+            className={styles.checkbox}
+            role="checkbox"
+            aria-checked={acceptTerms}
+            tabIndex={0}
+            onClick={toggleAcceptTerms}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleAcceptTerms();
+              }
+            }}
+            style={{
+              background: acceptTerms ? "#1A5458" : "transparent",
+            }}
+          >
+            {acceptTerms && (
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.7998 6L4.4998 8.7L10.1998 3"
+                  stroke="#F2FBFB"
+                  strokeWidth="0.72"
+                  strokeMiterlimit="10"
+                  strokeLinecap="square"
+                />
+              </svg>
+            )}
+          </div>
+          <span className={styles.termsText}>
+            I agree to the Terms of Service and Privacy Policy
+          </span>
+        </label>
+
+        <button
+          className={styles.submitButton}
+          disabled={isSubmitting}
+          onClick={handleSubmit}
+          style={{
+            background: isSubmitting ? "#BCC1CA" : "#4A90E2",
+            cursor: isSubmitting ? "not-allowed" : "pointer",
+          }}
+        >
+          {isSubmitting ? "Creating account..." : "Create Account"}
+        </button>
+      </div>
+      <div className={styles.decorativeSidebar} />
+    </div>
   );
 }
 
