@@ -1,0 +1,30 @@
+:root {
+    --bg-color: #f7f7f7;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --btn-color: #0077cc;
+    --btn-hover: #005fa3;
+  }
+  
+  [data-theme='dark'] {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-bg: #2b2b2b;
+    --btn-color: #00aaff;
+    --btn-hover: #0077cc;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  button {
+    background-color: var(--btn-color);
+    color: white;
+  }
+  
+  button:hover {
+    background-color: var(--btn-hover);
+  }
+  

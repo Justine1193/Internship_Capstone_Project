@@ -1,0 +1,28 @@
+.dashboardWrapper {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.filterSection {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.internshipSection {
+  flex: 3;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}

@@ -1,29 +1,23 @@
-import React from "react";
-import styles from "./Dashboard.module.css";
-import InternshipCard from "./InternshipCard";
-import Pagination from "./Pagination";
+import React from 'react';
+import styles from './styles/InternshipList.module.css';
 
-const InternshipList = () => {
+const InternshipList = ({ internships }) => {
   return (
-    <section className={styles.internshipListSection}>
-      <div className={styles.listHeader}>
-        <h2 className={styles.listTitle}>Internship Listings</h2>
-        <div className={styles.sortSection}>
-          <span className={styles.sortLabel}>Sorted By</span>
-          <select className={styles.sortDropdown}>
-            <option>Most Relevant</option>
-          </select>
+    <div className={styles.list}>
+      {internships.map((item) => (
+        <div className={styles.card} key={item.id}>
+          <div className={styles.logo}>
+            <img src="/logos/emerson-logo.png" alt="company" />
+          </div>
+          <div className={styles.details}>
+            <h3>{item.title}</h3>
+            <p><strong>{item.company}</strong> • {item.location} • {item.duration}</p>
+            <p>⭐ {item.rating}</p>
+            <button className={styles.viewBtn}>View</button>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.listContainer}>
-        {[...Array(8)].map((_, index) => (
-          <InternshipCard key={index} />
-        ))}
-      </div>
-
-      <Pagination />
-    </section>
+      ))}
+    </div>
   );
 };
 

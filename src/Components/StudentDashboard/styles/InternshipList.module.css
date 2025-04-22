@@ -1,0 +1,51 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: #ffffff;
+    display: flex;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .details {
+    flex: 1;
+    padding-left: 1rem;
+  }
+  
+  .details h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .details p {
+    margin: 0.3rem 0;
+    color: #555;
+  }
+  
+  .viewBtn {
+    background-color: #0077cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewBtn:hover {
+    background-color: #005fa3;
+  }
+  

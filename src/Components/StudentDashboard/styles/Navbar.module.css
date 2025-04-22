@@ -1,0 +1,90 @@
+.navbar {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .navLinks a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+  
+  .navLinks a:hover {
+    color: var(--btn-color);
+  }
+  
+  .profileMenu {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--btn-color);
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+  
+  .dropdown li {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  
+  .themeToggle {
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background 0.3s ease;
+  }
+  
+  .themeToggle:hover {
+    background-color: var(--btn-hover);
+    color: white;
+  }
+  
