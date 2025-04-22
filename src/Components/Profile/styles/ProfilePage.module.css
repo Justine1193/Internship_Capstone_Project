@@ -1,0 +1,40 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .profileBox {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profileBox h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .buttonContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .saveButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .saveButton:hover {
+    background-color: #0056b3;
+  }
+  
