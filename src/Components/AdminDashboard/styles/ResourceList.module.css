@@ -1,0 +1,28 @@
+.resourceList {
+    width: 300px;
+    text-align: left;
+  }
+  
+  .resourceItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .editBtn {
+    background-color: #ffc107;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  
+  .deleteBtn {
+    background-color: #dc3545;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    color: white;
+  }
+  
