@@ -1,0 +1,31 @@
+.footer {
+    background-color: #2b2d42;
+    color: white;
+    padding: 2rem 1rem 1rem;
+    margin-top: auto;
+  }
+  
+  .footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footerLogo img {
+    height: 40px;
+  }
+  
+  .footerSocials a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .footerBottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
