@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaClipboardList, FaUserGraduate, FaBook, FaMoon, FaSun } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 
@@ -7,13 +7,16 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
 
+  useEffect(() => {
+    document.body.className = darkMode ? 'dark' : 'light';
+  }, [darkMode]);
+
   const handleLogout = () => {
     console.log("Logged out!");
   };
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
-    document.body.className = darkMode ? 'light' : 'dark'; // apply class to body
   };
 
   return (
@@ -22,19 +25,28 @@ const Navbar = () => {
 
       <ul className={styles.navLinks}>
         <li>
-          <Link to="/manage-internships">
+          <NavLink 
+            to="/manage-internships" 
+            className={({ isActive }) => isActive ? styles.active : undefined}
+          >
             <FaClipboardList className={styles.icon} /> Manage Internships
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/manage-students">
+          <NavLink 
+            to="/manage-students" 
+            className={({ isActive }) => isActive ? styles.active : undefined}
+          >
             <FaUserGraduate className={styles.icon} /> Manage Students
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/manage-resources">
+          <NavLink 
+            to="/manage-resources" 
+            className={({ isActive }) => isActive ? styles.active : undefined}
+          >
             <FaBook className={styles.icon} /> Manage Resources
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
