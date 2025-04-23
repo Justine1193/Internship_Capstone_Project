@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth, createUserWithEmailAndPassword } from "./firebase"; // Import Firebase functions
+import { auth, createUserWithEmailAndPassword } from "../../../firebase";
 import "./SignUp.css";
 
 const SignUp = () => {
