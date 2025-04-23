@@ -1,21 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 .signin-container {
-  width: 400px;
-  margin: 80px auto;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.92),
-      rgba(255, 255, 255, 0.92)
-    ),
-    url('theme-bg.jpg'); /* Replace with your actual background image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg/330px-NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-  z-index: 1;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  backdrop-filter: blur(2px); /* optional: slight blur for content readability */
 }
 
 .signin-container::before {

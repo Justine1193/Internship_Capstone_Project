@@ -1,73 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-
 .signup-container {
-  width: 400px;
-  margin: 80px auto;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.92),
-      rgba(255, 255, 255, 0.92)
-    ),
-    url('theme-bg.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg/330px-NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-  z-index: 1;
-}
-
-/* Create a subtle blur for modern depth */
-.signup-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 12px;
-  background: inherit;
-  filter: blur(8px);
-  z-index: -1;
-}
-
-.signup-container h2 {
-  color: #2c3e50;
-  margin-bottom: 30px;
-  font-weight: 600;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  backdrop-filter: blur(2px); /* optional: slight blur for content readability */
 }
 
 .auth-form {
-  display: flex;
-  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .auth-input {
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.auth-input:focus {
-  border-color: #27ae60;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
 }
 
 .auth-button {
-  padding: 12px;
-  background-color: #27ae60;
-  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #004aad;
+  color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 17px;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .auth-button:hover {
-  background-color: #219150;
+  background-color: #00307a;
 }
