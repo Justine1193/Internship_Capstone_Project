@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import InternshipList from './components/InternshipList';
-import FooterSection from './components/FooterSection';
-import styles from './components/styles/ClientDashboard.module.css';
-import './themes.css';
+import Navbar from "./navbar";
+import InternshipList from "./InternshipList";
+import FooterSection from "./Footersection";
+import styles from './styles/ClientDashboard.module.css';
+
+import { db } from "../../firebase";
+import { ref, onValue } from "firebase/database";
+
 
 const ClientDashboard = () => {
   const [theme, setTheme] = useState('light');
   const [filters, setFilters] = useState({ location: '', status: '', duration: '' });
-
-  const [internships] = useState([
-    {
-      title: "Web Dev Intern",
-      location: "Remote",
-      status: "Open",
-      duration: "2 months",
-    },
-    {
-      title: "Marketing Intern",
-      location: "Onsite",
-      status: "Closed",
-      duration: "3 months",
-    },
-    // add more dummy internships
-  ]);
+  const [internships, setInternships] = useState([]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  // 🔥 Fetch internships from Firebase Realtime Database
+  useEffect(() => {
+    const internshipRef = ref(db, "internships");
+    onValue(internshipRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const internshipArray = Object.values(data);
+        setInternships(internshipArray);
+      }
+    });
+  }, []);
 
   const filteredInternships = internships.filter(internship => {
     return (

@@ -1,5 +1,4 @@
 import React from "react";
-import "./LandingPage.css";
 import FooterSection from "../../Components/LandingPageComponents/FooterSection.jsx";
 import HeroSection from "../../Components/LandingPageComponents/HeroSection.jsx";
 import Navbar from "../../Components/LandingPageComponents/Navbar.jsx";
@@ -10,11 +9,9 @@ const LandingPage = () => {
     <>
     
       <Navbar />
-      <div className="landingPage.css">
       <HeroSection />
       <StepSection />
       <FooterSection />
-      </div>
     </>
   );
 };

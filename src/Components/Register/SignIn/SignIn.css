@@ -6,12 +6,17 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg/330px-NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg");
+  background-color: #002f6c;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 2rem;
   backdrop-filter: blur(2px); /* optional: slight blur for content readability */
+}
+
+.signin-name {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .signin-container::before {
@@ -75,4 +80,26 @@
 
 .auth-button:hover {
   background-color: #1f669a;
+}
+
+.signup-redirect {
+  text-align: center;
+  margin-top: 1rem;
+  
+}
+
+.signup-redirect p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.signup-redirect a {
+  color: #004aad;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-redirect a:hover {
+  color: #002f6c;
+  text-decoration: underline;
 }
