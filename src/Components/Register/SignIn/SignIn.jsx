@@ -1,83 +1,77 @@
 import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebase"; // make sure this is correctly set up
+import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
 
-const SignIn = () => {
+const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSignIn = (e) => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Basic validation before submitting
+
     if (!email || !password) {
       setError("Please fill in both fields.");
       return;
     }
-    // Clear previous error
-    setError("");
 
-    // Simulate an API request or authentication process (e.g., Firebase)
-    const mockAuthResponse = { success: true, token: "mock-token-123" };
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-    if (mockAuthResponse.success) {
-      console.log("Sign In Successful:", { email, password, remember });
+      console.log("✅ User signed in:", user.uid);
 
-      // If 'Remember Me' is checked, save the token in local storage
-      if (remember) {
-        localStorage.setItem("userToken", mockAuthResponse.token);
-        console.log("Token saved in localStorage");
-      } else {
-        sessionStorage.setItem("userToken", mockAuthResponse.token);
-        console.log("Token saved in sessionStorage");
-      }
-
-      // Optionally, you can redirect the user to a dashboard or homepage
-      // For example, using React Router: history.push("/dashboard");
-    } else {
-      setError("Failed to sign in. Please check your credentials.");
+      // ✅ Redirect to dashboard page after successful login
+      navigate("/dashboard");
+    } catch (err) {
+      setError("Invalid email or password.");
+      console.error("Login error:", err.message);
     }
   };
 
   return (
     <div className="signin-container">
-      <h2>Sign In</h2>
-      <form onSubmit={handleSignIn} className="auth-form">
+      <form onSubmit={handleLogin} className="auth-form">
+        <div className="signin-name">
+          <h1>Log In</h1>
+        </div>
+
         {error && <div className="error-message">{error}</div>}
+
         <input
           type="email"
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          aria-label="Email Address"
           className="auth-input"
         />
+
         <input
           type="password"
           placeholder="Your Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          aria-label="Password"
           className="auth-input"
         />
-        <div className="remember-container">
-          <input
-            type="checkbox"
-            id="rememberMe"
-            checked={remember}
-            onChange={(e) => setRemember(e.target.checked)}
-            aria-label="Remember Me"
-          />
-          <label htmlFor="rememberMe">Remember Me</label>
-        </div>
+
         <button type="submit" className="auth-button">
           Log In
         </button>
+
+        <div className="signup-redirect">
+          <p>
+            Don't have an account? <a href="/signup">Sign Up</a>
+          </p>
+        </div>
       </form>
     </div>
   );
 };
 
-export default SignIn;
+export default SignInForm;

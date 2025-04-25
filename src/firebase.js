@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"; // <-- Import Authentication functions
-import { getDatabase } from "firebase/database"; // <-- Import Realtime Database
+import { getDatabase, ref, set } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,5 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app); // <-- Initialize Firebase Authentication
-export const db = getDatabase(app); // <-- Export Realtime Database
+const db = getDatabase(app); // <-- Export Realtime Database
+
 export { auth, createUserWithEmailAndPassword }; // <-- Export auth and createUserWithEmailAndPassword
+export { db, ref, set };

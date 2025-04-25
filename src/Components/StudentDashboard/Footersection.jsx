@@ -1,5 +1,5 @@
 import React from 'react';
-import './FooterSection.css';
+import './styles/FooterSection.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import logo_dark from '../../assets/logo-white.png';

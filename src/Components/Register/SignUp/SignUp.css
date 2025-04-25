@@ -4,33 +4,36 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg/330px-NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg");
+  background-color: #002f6c;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 2rem;
-  backdrop-filter: blur(2px); /* optional: slight blur for content readability */
 }
 
+  .signup-name {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
 .auth-form {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 2rem;
+  width: 30rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .auth-input {
   width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem 2.75rem 0.75rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
 .auth-button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #004aad;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -41,4 +44,25 @@
 
 .auth-button:hover {
   background-color: #00307a;
+}
+
+.login-redirect {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-redirect p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.login-redirect a {
+  color: #004aad;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-redirect a:hover {
+  color: #002f6c;
+  text-decoration: underline;
 }

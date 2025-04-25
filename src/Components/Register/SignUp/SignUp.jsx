@@ -1,51 +1,60 @@
 import React, { useState } from "react";
-import { auth, createUserWithEmailAndPassword } from "../../../firebase";
+import { Form } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+import { auth, db, createUserWithEmailAndPassword, ref, set } from "../../../firebase";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./SignUp.css";
 
-const SignUp = () => {
-  const [email, setEmail] = useState("");
+const SignUpForm = () => {
   const [password, setPassword] = useState("");
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const [emailError, setEmailError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [signupError, setSignupError] = useState(""); // To handle errors from sign-up
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const navigate = useNavigate();
 
-  const handleSignUp = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Basic email validation
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailRegex.test(email)) {
-      setEmailError("Please enter a valid email address.");
-      return;
-    } else {
-      setEmailError("");
-    }
-
-    setLoading(true);
-
     try {
-      // Firebase sign-up logic
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      console.log("User signed up:", user);
-
-      // Reset form and loading state
-      setEmail("");
-      setPassword("");
-      setLoading(false);
+  
+      await set(ref(db, "users/" + user.uid), {
+        fullName,
+        email,
+      });
+  
+      console.log("User registered:", user.uid);
+      navigate("/login");
+  
     } catch (error) {
-      setSignupError(error.message); // Handle sign-up errors (e.g., weak password, user already exists)
-      setLoading(false);
+      console.error("Error signing up:", error.message);
     }
   };
+  
 
   return (
     <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignUp} className="auth-form">
-        <div>
-          <input
+      <Form className="auth-form" onSubmit={handleSubmit}>
+
+      <div className="signup-name">
+        <h1>Sign Up</h1>
+      </div>
+
+        {/* Full Name */}
+
+        <Form.Group className="mb-3">
+          <Form.Control
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+            className="auth-input"
+          />
+        </Form.Group>
+
+        {/* Email */}
+        <Form.Group className="mb-3">
+          <Form.Control
             type="email"
             placeholder="Your Email"
             value={email}
@@ -53,32 +62,33 @@ const SignUp = () => {
             required
             className="auth-input"
           />
-          {emailError && <div className="error">{emailError}</div>}
-        </div>
-        <div>
-          <input
-            type={passwordVisible ? "text" : "password"}
+        </Form.Group>
+
+        {/* Password */}
+        <Form.Group className="mb-3">
+          <Form.Control
+            type="password"
             placeholder="Your Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             className="auth-input"
           />
-          <button
-            type="button"
-            className="toggle-visibility"
-            onClick={() => setPasswordVisible(!passwordVisible)}
-          >
-            {passwordVisible ? "Hide" : "Show"} Password
-          </button>
-        </div>
-        <button type="submit" className="auth-button" disabled={loading}>
-          {loading ? "Creating Account..." : "Create Account"}
+        </Form.Group>
+
+        {/* Submit Button */}
+        <button type="submit" className="auth-button">
+          Sign Up
+          
         </button>
-        {signupError && <div className="error">{signupError}</div>}
-      </form>
+        <div className="login-redirect">
+          <p>
+            Already have an account? <a href="/signin">Log In</a>
+          </p>
+        </div>
+      </Form>
     </div>
   );
 };
 
-export default SignUp;
+export default SignUpForm;

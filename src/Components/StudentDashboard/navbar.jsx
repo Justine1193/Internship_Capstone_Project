@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Navbar.module.css';
-import profileImg from '../../assets/profile.png'; // replace with your avatar image
+import styles from './styles/Navbar.module.css';
+import profileImg from "../../assets/destination.png";
 
 const Navbar = ({ onThemeToggle }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);

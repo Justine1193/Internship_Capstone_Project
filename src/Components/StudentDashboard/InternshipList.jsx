@@ -2,6 +2,10 @@ import React from 'react';
 import styles from './styles/InternshipList.module.css';
 
 const InternshipList = ({ internships }) => {
+  if (!internships || internships.length === 0) {
+    return <p>No internships available.</p>;
+  }
+
   return (
     <div className={styles.list}>
       {internships.map((item) => (
