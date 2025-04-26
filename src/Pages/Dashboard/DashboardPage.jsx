@@ -1,15 +1,12 @@
 import React from "react";
-import Navbar from "../../Components/StudentDashboard/navbar.jsx";
-import ClientDashboard from "../../Components/StudentDashboard/ClientDashboard.jsx";
-import Internship from "../../Components/StudentDashboard/InternshipList.jsx";
-import Footer from "../../Components/StudentDashboard//Footersection.jsx";
+import ClientDashboardContent from "../../Components/StudentDashboard/ClientDashboard.jsx";
 
-const DashboardPage = () => {
+const ClientDashboard = () => {
   return (
     <>
-      <ClientDashboard />
+      <ClientDashboardContent />
     </>
   );
 };
 
-export default DashboardPage;
+export default ClientDashboard;

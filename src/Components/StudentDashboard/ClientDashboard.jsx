@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import InternshipList from "./InternshipList";
 import FooterSection from "./Footersection";
 import styles from './styles/ClientDashboard.module.css';
@@ -7,17 +7,15 @@ import styles from './styles/ClientDashboard.module.css';
 import { db } from "../../firebase";
 import { ref, onValue } from "firebase/database";
 
-
 const ClientDashboard = () => {
   const [theme, setTheme] = useState('light');
-  const [filters, setFilters] = useState({ location: '', status: '', duration: '' });
+  const [filters, setFilters] = useState({ location: 'All', status: 'All', duration: 'All' });
   const [internships, setInternships] = useState([]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // 🔥 Fetch internships from Firebase Realtime Database
   useEffect(() => {
     const internshipRef = ref(db, "internships");
     onValue(internshipRef, (snapshot) => {
@@ -31,9 +29,9 @@ const ClientDashboard = () => {
 
   const filteredInternships = internships.filter(internship => {
     return (
-      (!filters.location || internship.location === filters.location) &&
-      (!filters.status || internship.status === filters.status) &&
-      (!filters.duration || internship.duration === filters.duration)
+      (filters.location === 'All' || internship.location === filters.location) &&
+      (filters.status === 'All' || internship.status === filters.status) &&
+      (filters.duration === 'All' || internship.duration === filters.duration)
     );
   });
 
@@ -47,34 +45,43 @@ const ClientDashboard = () => {
       <main className={styles.mainContent}>
         <aside className={styles.filterSection}>
           <h4>Filter Internships</h4>
-          <label>
-            Location:
-            <select name="location" onChange={handleFilterChange}>
-              <option value="">All</option>
+
+          <div className={styles.filterGroup}>
+            <label>Location:</label>
+            <select name="location" value={filters.location} onChange={handleFilterChange}>
+              <option value="All">All</option>
               <option value="Remote">Remote</option>
               <option value="Onsite">Onsite</option>
             </select>
-          </label>
-          <label>
-            Duration:
-            <select name="duration" onChange={handleFilterChange}>
-              <option value="">All</option>
+          </div>
+
+          <div className={styles.filterGroup}>
+            <label>Duration:</label>
+            <select name="duration" value={filters.duration} onChange={handleFilterChange}>
+              <option value="All">All</option>
               <option value="2 months">2 months</option>
               <option value="3 months">3 months</option>
             </select>
-          </label>
-          <label>
-            Status:
-            <select name="status" onChange={handleFilterChange}>
-              <option value="">All</option>
+          </div>
+
+          <div className={styles.filterGroup}>
+            <label>Status:</label>
+            <select name="status" value={filters.status} onChange={handleFilterChange}>
+              <option value="All">All</option>
               <option value="Open">Open</option>
               <option value="Closed">Closed</option>
             </select>
-          </label>
+          </div>
+
         </aside>
+
         <section className={styles.internshipSection}>
           <h2>Internship Listings</h2>
-          <InternshipList internships={filteredInternships} />
+          {filteredInternships.length > 0 ? (
+            <InternshipList internships={filteredInternships} />
+          ) : (
+            <p>No internships available.</p>
+          )}
         </section>
       </main>
       <FooterSection />

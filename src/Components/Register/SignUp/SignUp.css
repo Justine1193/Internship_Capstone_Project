@@ -4,17 +4,18 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #002f6c;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg/330px-NEU_Main_Campus%2C_Central_Avenue%2C_New_Era%2C_Quezon_City.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 2rem;
 }
 
-  .signup-name {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+.signup-name {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .auth-form {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 2rem;
@@ -35,6 +36,7 @@
   width: 100%;
   padding: 0.75rem;
   color: white;
+  background-color: #004aad; /* added bg color */
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;

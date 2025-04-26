@@ -1,21 +1,54 @@
+.dashboardWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 2rem;
+}
+
 .filterSection {
+  flex: 0.25;
+  background: var(--filter-background, #f9f9f9);
   padding: 1rem;
-  background: var(--card-bg);
-  border-right: 1px solid #ddd;
-  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.filterSection label {
-  display: block;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+.internshipSection {
+  flex: 0.75;
+  background: var(--content-background, #ffffff);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.filterSection select {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  margin-top: 0.3rem;
-  background-color: var(--bg-color);
+/* Light Theme */
+:root {
+  --background-color: #f0f2f5;
+  --filter-background: #f9f9f9;
+  --content-background: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --filter-background: #2c2c2c;
+  --content-background: #2c2c2c;
+  --text-color: #ffffff;
+}
+
+/* Additional: fix select, labels, etc. */
+.filterSection label,
+.filterSection select,
+.filterSection option {
   color: var(--text-color);
+  background: var(--filter-background);
 }
